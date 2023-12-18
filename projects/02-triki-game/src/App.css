@@ -1,42 +1,92 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  box-sizing: border-box;
+  /* margin: 0;
+  padding: 0; */
+}
+
+.board {
   text-align: center;
+  margin: 40px auto;
+  width: fit-content;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.board button {
+  background: transparent;
+  border: 2px solid #eee;
+  border-radius: 5px;
+  color: #eee;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 25px;
+  transition: 0.2s;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.board .game {
+  display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.turn {
+  border-radius: 10px;
+  display: flex;
+    justify-content: center;
+  margin: 15px auto;
+  position: relative;
+  width: fit-content;
 }
 
-.card {
-  padding: 2em;
+.turn .square, .winner .square {
+  border-color: transparent;
+  height: 70px;
+  pointer-events: none;
+  width: 70px;
 }
 
-.read-the-docs {
-  color: #888;
+.square.is-selected {
+  color: #fff;
+  background: #09f;
+}
+
+.winner {
+  background-color: rgba(0, 0, 0, .7);
+  height: 100vh;
+  place-items: center;
+  position: absolute;
+    top: 0;
+    left: 0;
+  width: 100vw;
+}
+
+.winner .text {
+  background: #111;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  height: 300px;
+  width: 320px;
+}
+
+.winner .win {
+  border: 2px solid #eee;
+  border-radius: 10px;
+  display: flex;
+    gap: 15px;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.square {
+  border: 2px solid #eee;
+  border-radius: 5px;
+  cursor: pointer;
+  display: grid;
+  font-size: 48px;
+  height: 100px;
+  place-items: center;
+  width: 100px;
 }
