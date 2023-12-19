@@ -17,9 +17,11 @@
   color: #eee;
   cursor: pointer;
   font-weight: bold;
-  margin: 25px;
+  margin: 20px;
   transition: 0.2s;
 }
+
+.board h1 {margin: 0;}
 
 .board .game {
   display: grid;
@@ -68,6 +70,11 @@
     justify-content: center;
     gap: 20px;
   height: 300px;
+  /* place-items: center; */
+  position: absolute;
+    top: 50%;
+    left: 50%;
+  transform: translateY(-50%) translateX(-50%);
   width: 320px;
 }
 
@@ -86,7 +93,7 @@
   cursor: pointer;
   display: grid;
   font-size: 48px;
-  height: 100px;
+  height: 80px;
   place-items: center;
-  width: 100px;
+  width: 80px;
 }
