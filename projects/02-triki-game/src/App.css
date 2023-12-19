@@ -46,8 +46,8 @@
 }
 
 .square.is-selected {
+  border: 2px solid slateblue;
   color: #fff;
-  background: #09f;
 }
 
 .winner {
@@ -94,6 +94,7 @@
   display: grid;
   font-size: 48px;
   height: 80px;
+  line-height: 48px;
   place-items: center;
   width: 80px;
 }
