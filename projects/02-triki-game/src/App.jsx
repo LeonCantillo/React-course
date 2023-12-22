@@ -9,12 +9,11 @@ import './App.css'
 function App() {
   const [board, setBoard] = useState(() => {
     const boardFromStorage = window.localStorage.getItem('board')
-    if(boardFromStorage) return JSON.parse(boardFromStorage)
-    return Array(9).fill(null)
+    return boardFromStorage ? JSON.parse(boardFromStorage) : Array(9).fill(null)
   })
   const [turn, setTurn] = useState(() => {
     const turnFromStorage = window.localStorage.getItem('turn')
-    return turnFromStorage ? turnFromStorage : TURNS.x
+    return turnFromStorage ?? TURNS.x
   })
   
   // null quiere decir que no hay ganador, false significa un empate
@@ -41,7 +40,7 @@ function App() {
     setTurn(newTurn)
     // Guardar partida
     window.localStorage.setItem('board', JSON.stringify(newBoard))
-    window.localStorage.setItem('turn', turn)
+    window.localStorage.setItem('turn', newTurn)
     console.log('Se guardó')
     // Revisar si hay ganador
     const newWinner = checkWinner(newBoard)
