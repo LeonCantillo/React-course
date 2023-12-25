@@ -1,0 +1,31 @@
+.signinbox span {
+    --backgroundBox: #fff;
+    --sizeSpan: calc(5vw - 2px);
+    background-color: var(--backgroundBox);
+    display: block;
+    height: var(--sizeSpan);
+    position: relative;
+    transition: 1.5s;
+    width: var(--sizeSpan);
+    z-index: 2;
+}
+
+.signinbox span:hover {
+    /* background-color: var(--highlight); */
+    background-color: red;
+   transition: 0s;
+}
+
+@media (max-width: 900px) {
+    .signinbox span {
+        height: calc(10vw - 2px);
+        width: calc(10vw - 2px);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .signinbox span {
+        height: calc(20vw - 2px);
+        width: calc(20vw - 2px);
+    }
+  }
