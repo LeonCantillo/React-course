@@ -11,9 +11,8 @@
 }
 
 .signinbox span:hover {
-    /* background-color: var(--highlight); */
-    background-color: red;
-   transition: 0s;
+    background-color: var(--highlight);
+    transition: 0s;
 }
 
 @media (max-width: 900px) {
