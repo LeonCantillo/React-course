@@ -9,16 +9,23 @@ function App() {
     const handleSize = () => {
       const widthPage = window.innerWidth
       const heightPage = window.innerHeight
-      const sizeSquare = widthPage * 0.05 - 2 //-2px gap
-      
-      const numSquareWidth = Math.floor(widthPage/sizeSquare)
-      const numSquareHeight = Math.floor(heightPage/sizeSquare)
+      const percentageSize = () => (widthPage < 600 ? 0.2 : widthPage < 900 ? 0.1 : 0.05)
+      const sizeSquare = widthPage * percentageSize()
+      const numSquareWidth = Math.ceil(widthPage/sizeSquare)
+      const numSquareHeight = Math.ceil(heightPage/sizeSquare)
       const numSquare = numSquareHeight * numSquareWidth
       
       const newArray = Array.from({length: numSquare}, (_,index) => (<Square key={index}/>))
+      // Lo que es lo mismo:
+      // const newArray = [];
+      // for (let i = 0; i < numSquare; i++) {
+      //   newArray.push((index => (
+      //     <Square key={index}>{i}</Square>
+      //   ))(i));
+      // }
       setSquaresOb(newArray)
       
-      console.log('width:',widthPage,'height:',heightPage,'size:',sizeSquare)
+      console.log('width:',widthPage,'height:',heightPage,'size:',Math.floor(sizeSquare))
       console.log('Swidth:',numSquareWidth,'Sheight:',numSquareHeight,'total:', numSquare)
     }
 
