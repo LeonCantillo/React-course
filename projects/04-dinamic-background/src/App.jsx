@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Square } from './components/squareOfBg'
+import { LogInOut } from './components/logInOut'
 import './styles/App.css'
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
       <section className='dinamic_background'>
         <section className='signinbox'>
           {squaresOb}
+          <LogInOut/>
         </section>
       </section>
     </>
